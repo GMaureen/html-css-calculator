@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pink & Green Calculator</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="calculator">
+<input type="text" id="inputBox" readonly />
+
+<table>
+<tr>
+<td onclick="digitBtnPressed('7')">7</td>
+<td onclick="digitBtnPressed('8')">8</td>
+<td onclick="digitBtnPressed('9')">9</td>
+<td onclick="digitBtnPressed('/')">÷</td>
+</tr>
+<tr>
+<td onclick="digitBtnPressed('4')">4</td>
+<td onclick="digitBtnPressed('5')">5</td>
+<td onclick="digitBtnPressed('6')">6</td>
+<td onclick="digitBtnPressed('*')">×</td>
+</tr>
+<tr>
+<td onclick="digitBtnPressed('1')">1</td>
+<td onclick="digitBtnPressed('2')">2</td>
+<td onclick="digitBtnPressed('3')">3</td>
+<td onclick="digitBtnPressed('-')">−</td>
+</tr>
+<tr>
+<td colspan="2" onclick="digitBtnPressed('0')">0</td>
+<td onclick="btnACPressed()">AC</td>
+<td onclick="digitBtnPressed('+')">+</td>
+</tr>
+<tr>
+<td colspan="4" onclick="calculateResult()">=</td>
+</tr>
+</table>
+</div>
+
+<script>
+// Always build the full expression in the input box
+function digitBtnPressed(value) {
+const input = document.getElementById("inputBox");
+if (input.value === "0") {
+input.value = value;
+} else {
+input.value += value;
+}
+}
+
+function btnACPressed() {
+document.getElementById("inputBox").value = "0";
+}
+
+function calculateResult() {
+const input = document.getElementById("inputBox");
+try {
+input.value = eval(input.value);
+} catch (error) {
+input.value = "Error";
+}
+}
+
+// Initialize the input box with 0
+document.getElementById("inputBox").value = "0";
+</script>
+</body>
+</html>
+

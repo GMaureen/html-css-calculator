@@ -1,0 +1,88 @@
+/* Page background */
+body {
+background: linear-gradient(to right, #effcf6, #ffe0f0); /* soft pink and blush gradient */
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
+
+/* Calculator wrapper */
+.calculator {
+border: 4px solid #f8b2dd; /* light pink border */
+background-color: #fff0fa;
+padding: 20px;
+border-radius: 15px;
+box-shadow: 0 8px 25px rgba(255, 182, 193, 0.6); /* pink shadow */
+animation: popIn 0.6s ease-in-out;
+transition: transform 0.3s ease;
+}
+
+/* Screen (input box) */
+#inputBox {
+width: 100%;
+height: 50px;
+font-size: 24px;
+background-color: #f9f9f5; /* cream light-gray */
+border: none;
+border-radius: 10px;
+padding: 10px;
+text-align: right;
+color: #444;
+font-weight: bold;
+margin-bottom: 15px;
+box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Button table */
+table {
+width: 100%;
+border-collapse: collapse;
+}
+
+td {
+background-color: #f6b6ff2e; /* light pink buttons */
+color: rgba(255, 255, 255, 0.801);
+font-size: 20px;
+padding: 15px;
+text-align: center;
+cursor: pointer;
+border-radius: 10px;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+user-select: none;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.247);
+}
+
+/* Hover effect */
+td:hover {
+background-color: #cf9eff;
+transform: translateY(-3px);
+}
+
+/* Click/active effect */
+td:active {
+outline: 3px solid #ffd9e6; /* square light pink outline */
+background-color: #958bff;
+transform: scale(0.95);
+}
+
+/* Calculator "pop in" animation */
+@keyframes popIn {
+0% {
+opacity: 0;
+transform: scale(0.6);
+}
+100% {
+opacity: 1;
+transform: scale(1);
+}
+}
+
+td {
+background-color: #ffb6f662; /* pink buttons */
+color: black; /* ✅ numbers now always black */
+font-size: 20px;
+...
+}
